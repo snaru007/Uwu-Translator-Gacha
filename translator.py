@@ -18,6 +18,8 @@ async def on_message(message):
         return
     if not message.content:
         return
+    if not ' ' in message.content.strip():
+        return   
     role = discord.utils.get(message.author.roles, name='uwu prison')
     if role is not None and role.name == 'uwu prison':
         uwu_flags = uwuify.SMILEY | uwuify.YU
