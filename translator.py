@@ -19,10 +19,12 @@ async def on_message(message):
     if not message.content:
         return
     if not ' ' in message.content.strip():
-        return   
+        return 
     role = discord.utils.get(message.author.roles, name='uwu prison')
     if role is not None and role.name == 'uwu prison':
         uwu_flags = uwuify.SMILEY | uwuify.YU
+        if uwuify.uwu(message.content) == message.content:
+            return
         cursed_payload = uwuify.uwu(message.content, flags=uwu_flags)
         channel = message.channel
         async with channel.typing():
