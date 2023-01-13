@@ -1,5 +1,6 @@
 import os
 import discord
+import random
 import uwuify
 from dotenv import load_dotenv
 
@@ -20,8 +21,9 @@ async def on_message(message):
         return
     if not ' ' in message.content.strip():
         return 
-    role = discord.utils.get(message.author.roles, name='uwu prison')
-    if role is not None and role.name == 'uwu prison':
+    role = discord.utils.get(message.author.roles, name='Weebs')
+    gachaWin = (random.randrange(100) == 69)
+    if role is not None and role.name == 'Weebs' and gachaWin:
         uwu_flags = uwuify.SMILEY | uwuify.YU
         if uwuify.uwu(message.content) == message.content:
             return
